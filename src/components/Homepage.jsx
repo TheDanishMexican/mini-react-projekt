@@ -1,4 +1,4 @@
-import NavBar from "./Nav";
+import NavBar from "./NavBar";
 
 export default function Homepage() {
   return (
