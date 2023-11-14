@@ -26,15 +26,20 @@ export default function CreateForm() {
 
   return (
     <div>
-      <form>
-        <label for="name">name: </label>
-        <input 
-        type="text"
-        id="name"
-        placeholder="Type your name here">
-        required/>
+      <NavBar />
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">name: </label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Type your name here"
+          value={nameData}
+          onChange={handleChange}
+          required
+        />
 
         <button id="form-button">submit</button>
       </form>
-    </div> );
+    </div>
+  );
 }
