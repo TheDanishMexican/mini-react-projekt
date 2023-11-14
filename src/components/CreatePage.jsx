@@ -1,16 +1,16 @@
-export default CreateForm() {
+export default function CreateForm() {
   return(
     <div>
       <form>
         <label for="name">name: </label>
-        <input 
+        <input
         type="text"
         id="name"
         placeholder="Type your name here">
-        required/>
+        required
+        />
 
         <button id="form-button">submit</button>
       </form>
-    </div>
-  );
+    </div> );
 }
