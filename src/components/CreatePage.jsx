@@ -1,4 +1,5 @@
 import { useState } from "react";
+import cors from "cors";
 import NavBar from "./NavBar";
 
 export default function CreateForm() {
@@ -17,10 +18,12 @@ export default function CreateForm() {
 
     setNameData("");
 
-    await fetch("someroute", {
+    const dataRoute = "http://localhost:3000/";
+    console.log(user);
+    await fetch(dataRoute, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
+      body: JSON.stringify({ name: user }),
     });
   }
 
@@ -29,14 +32,7 @@ export default function CreateForm() {
       <NavBar />
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">name: </label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Type your name here"
-          value={nameData}
-          onChange={handleChange}
-          required
-        />
+        <input type="text" id="name" placeholder="Type your name here" value={nameData} onChange={handleChange} required />
 
         <button id="form-button">submit</button>
       </form>
